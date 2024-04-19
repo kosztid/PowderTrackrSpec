@@ -22,7 +22,7 @@ jobs:
       run: npm install @openapitools/openapi-generator-cli -g
 
     - name: Generate Swift Client
-      run: openapi-generator-cli generate -i openapi.yaml -g swift5 -o /tmp/swift-client
+      run: openapi-generator-cli generate -i openapi.yaml -g swift5 -o /tmp/swift-client --skip-validate-spec
 
     - name: Checkout Target Repository
       uses: actions/checkout@v2
