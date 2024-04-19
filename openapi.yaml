@@ -1,0 +1,663 @@
+openapi: "3.0.1"
+info:
+  title: "powdertrackr"
+  version: "2023-11-15 21:34:57UTC"
+servers:
+- url: "https://lzs3kfpl2l.execute-api.eu-central-1.amazonaws.com/{basePath}"
+  variables:
+    basePath:
+      default: "dev"
+paths:
+  /personalChats:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PersonalChats"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PersonalChat"
+        required: true
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /leaderBoards/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /users:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+        required: true
+  /userTrackedPaths:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserTrackedPathList"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserTrackedPaths"
+        required: true
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /userfriendLists/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserfriendList"
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /friendRequests/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FriendRequest"
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /userfriendLists:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserfriendLists"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserfriendList"
+        required: true
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /currentPositions:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CurrentPositions"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CurrentPosition"
+        required: true
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /groupChats/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GroupChat"
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /races:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Races"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Race"
+        required: true
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /personalChats/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PersonalChat"
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /leaderBoards:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LeaderBoards"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LeaderBoard"
+        required: true
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /races/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Race"
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /groupChats:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GroupChats"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GroupChat"
+        required: true
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /currentPositions/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CurrentPosition"
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /userTrackedPaths/{id}:
+    get:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserTrackedPaths"
+    delete:
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+  /friendRequests:
+    get:
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FriendRequests"
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FriendRequest"
+        required: true
+      responses:
+        "200":
+          description: "200 response"
+          content: {}
+components:
+  schemas:
+    PersonalChat:
+      title: "GroupChat"
+      required:
+      - "id"
+      - "messages"
+      - "participants"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        participants:
+          type: "array"
+          items:
+            type: "string"
+        messages:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/Message"
+    User:
+      title: "User"
+      required:
+      - "email"
+      - "id"
+      - "name"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        name:
+          type: "string"
+        email:
+          type: "number"
+    Message:
+      title: "Message"
+      required:
+      - "date"
+      - "id"
+      - "isPhoto"
+      - "isSeen"
+      - "sender"
+      - "text"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        sender:
+          type: "string"
+        date:
+          type: "string"
+        text:
+          type: "string"
+        isPhoto:
+          type: "boolean"
+        isSeen:
+          type: "boolean"
+    UserTrackedPathList:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/UserTrackedPaths"
+    PersonalChats:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/PersonalChat"
+    FriendRequest:
+      title: "FriendRequest"
+      required:
+      - "id"
+      - "recipient"
+      - "sender"
+      - "senderEmail"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        senderEmail:
+          type: "string"
+        sender:
+          $ref: "#/components/schemas/Friend"
+        recipient:
+          type: "string"
+    FriendRequests:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/FriendRequest"
+    LeaderBoard:
+      title: "LeaderBoard"
+      required:
+      - "distance"
+      - "id"
+      - "name"
+      - "totalTimeInSeconds"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        name:
+          type: "string"
+        distance:
+          type: "number"
+        totalTimeInSeconds:
+          type: "number"
+    Users:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/User"
+    GroupChats:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/GroupChat"
+    GroupChat:
+      title: "GroupChat"
+      required:
+      - "id"
+      - "messages"
+      - "participants"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        participants:
+          type: "array"
+          items:
+            type: "string"
+        messages:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/Message"
+    UserfriendList:
+      title: "UserfriendList"
+      required:
+      - "id"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        friends:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/Friend"
+    Races:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/Race"
+    TrackedPath:
+      title: "TrackedPath"
+      required:
+      - "endDate"
+      - "id"
+      - "name"
+      - "startDate"
+      - "tracking"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        name:
+          type: "string"
+        startDate:
+          type: "string"
+        endDate:
+          type: "string"
+        notes:
+          type: "array"
+          items:
+            type: "string"
+        xCoords:
+          type: "array"
+          items:
+            type: "number"
+        yCoords:
+          type: "array"
+          items:
+            type: "number"
+        tracking:
+          type: "boolean"
+    CurrentPosition:
+      title: "CurrentPosition"
+      required:
+      - "id"
+      - "name"
+      - "xCoord"
+      - "yCoord"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        name:
+          type: "string"
+        xCoord:
+          type: "string"
+        yCoord:
+          type: "string"
+    Friend:
+      title: "Friend"
+      required:
+      - "id"
+      - "isTracking"
+      - "name"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        name:
+          type: "string"
+        isTracking:
+          type: "boolean"
+    CurrentPositions:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/CurrentPosition"
+    Race:
+      title: "Race"
+      required:
+      - "date"
+      - "id"
+      - "name"
+      - "shortestDistance"
+      - "shortestTime"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        name:
+          type: "string"
+        date:
+          type: "string"
+        shortestTime:
+          type: "number"
+        shortestDistance:
+          type: "number"
+        xCoords:
+          type: "array"
+          items:
+            type: "number"
+        yCoords:
+          type: "array"
+          items:
+            type: "number"
+        tracks:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/TrackedPath"
+        participants:
+          type: "array"
+          items:
+            type: "string"
+    LeaderBoards:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/LeaderBoard"
+    UserfriendLists:
+      type: "array"
+      items:
+        $ref: "#/components/schemas/UserfriendList"
+    UserTrackedPaths:
+      title: "UserTrackedPaths"
+      required:
+      - "id"
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        tracks:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/TrackedPath"
+        sharedTracks:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/TrackedPath"

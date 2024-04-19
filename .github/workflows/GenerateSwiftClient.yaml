@@ -1,0 +1,45 @@
+name: Generate Swift Client
+
+on:
+  push:
+    paths:
+      - 'path/to/openapi.yaml'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install OpenAPI Generator
+      run: pip install openapi-generator-cli
+
+    - name: Generate Swift Client
+      run: openapi-generator-cli generate -i path/to/openapi.yaml -g swift5 -o /tmp/swift-client
+
+    - name: Checkout Target Repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'username/target-repository'
+        token: ${{ secrets.TARGET_REPO_TOKEN }}
+        path: 'target-repo'
+
+    - name: Copy Generated Code to Target Repository
+      run: |
+        cp -r /tmp/swift-client/* target-repo/
+
+    - name: Commit and Push
+      run: |
+        cd target-repo
+        git config --local user.email "koszti.dominik@gmail.com"
+        git config --local user.name "kosztid"
+        git add .
+        git commit -m "Update generated Swift client"
+        git push
