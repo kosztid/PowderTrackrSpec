@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'  # You can specify any version of Node.js that supports your operations.
+        node-version: '16'
 
     - name: Install OpenAPI Generator CLI
       run: npm install @openapitools/openapi-generator-cli -g
