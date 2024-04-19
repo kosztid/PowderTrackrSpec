@@ -2,8 +2,7 @@ name: Generate Swift Client
 
 on:
   push:
-    paths:
-      - 'path/to/openapi.yaml'
+    - main
 
 jobs:
   build:
