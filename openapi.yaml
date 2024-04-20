@@ -87,6 +87,21 @@ paths:
         "200":
           description: "200 response"
           content: {}
+  /users/{id}:
+    get:
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"
   /userfriendLists/{id}:
     get:
       parameters:
