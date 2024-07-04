@@ -180,6 +180,13 @@ paths:
         "200":
           description: "200 response"
           content: {}
+    delete:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserFriendDeletion"
+        required: true
   /currentPositions:
     get:
       responses:
