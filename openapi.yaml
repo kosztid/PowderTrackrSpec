@@ -3,10 +3,10 @@ info:
   title: "powdertrackr"
   version: "2024-04-20 19:46:57UTC"
 servers:
-  - url: "https://lzs3kfpl2l.execute-api.eu-central-1.amazonaws.com/{basePath}"
-    variables:
-      basePath:
-        default: "dev"
+- url: "https://lzs3kfpl2l.execute-api.eu-central-1.amazonaws.com/{basePath}"
+  variables:
+    basePath:
+      default: "dev"
 paths:
   /personalChats:
     get:
@@ -31,22 +31,22 @@ paths:
   /leaderBoards/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
           content: {}
     delete:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -90,11 +90,11 @@ paths:
   /users/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -105,11 +105,11 @@ paths:
   /userfriendLists/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -119,11 +119,17 @@ paths:
                 $ref: "#/components/schemas/UserfriendList"
     delete:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserFriendDeletion"
+        required: true
       responses:
         "200":
           description: "200 response"
@@ -131,11 +137,11 @@ paths:
   /friendRequests/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -145,11 +151,11 @@ paths:
                 $ref: "#/components/schemas/FriendRequest"
     delete:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -197,11 +203,11 @@ paths:
   /groupChats/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -211,11 +217,11 @@ paths:
                 $ref: "#/components/schemas/GroupChat"
     delete:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -243,11 +249,11 @@ paths:
   /personalChats/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -257,11 +263,11 @@ paths:
                 $ref: "#/components/schemas/PersonalChat"
     delete:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -289,11 +295,11 @@ paths:
   /races/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -303,11 +309,11 @@ paths:
                 $ref: "#/components/schemas/Race"
     delete:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -335,11 +341,11 @@ paths:
   /currentPositions/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -349,11 +355,11 @@ paths:
                 $ref: "#/components/schemas/CurrentPosition"
     delete:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -361,11 +367,11 @@ paths:
   /userTrackedPaths/{id}:
     get:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -375,11 +381,11 @@ paths:
                 $ref: "#/components/schemas/UserTrackedPaths"
     delete:
       parameters:
-        - name: "id"
-          in: "path"
-          required: true
-          schema:
-            type: "string"
+      - name: "id"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
       responses:
         "200":
           description: "200 response"
@@ -409,9 +415,9 @@ components:
     PersonalChat:
       title: "GroupChat"
       required:
-        - "id"
-        - "messages"
-        - "participants"
+      - "id"
+      - "messages"
+      - "participants"
       type: "object"
       properties:
         id:
@@ -424,12 +430,23 @@ components:
           type: "array"
           items:
             $ref: "#/components/schemas/Message"
+    UserFriendDeletion:
+      title: "UserFriendDeletion"
+      required:
+      - "friendId"
+      - "userId"
+      type: "object"
+      properties:
+        userId:
+          type: "string"
+        friendId:
+          type: "string"
     User:
       title: "User"
       required:
-        - "email"
-        - "id"
-        - "name"
+      - "email"
+      - "id"
+      - "name"
       type: "object"
       properties:
         id:
@@ -441,12 +458,12 @@ components:
     Message:
       title: "Message"
       required:
-        - "date"
-        - "id"
-        - "isPhoto"
-        - "isSeen"
-        - "sender"
-        - "text"
+      - "date"
+      - "id"
+      - "isPhoto"
+      - "isSeen"
+      - "sender"
+      - "text"
       type: "object"
       properties:
         id:
@@ -472,10 +489,10 @@ components:
     FriendRequest:
       title: "FriendRequest"
       required:
-        - "id"
-        - "recipient"
-        - "sender"
-        - "senderEmail"
+      - "id"
+      - "recipient"
+      - "sender"
+      - "senderEmail"
       type: "object"
       properties:
         id:
@@ -493,10 +510,10 @@ components:
     LeaderBoard:
       title: "LeaderBoard"
       required:
-        - "distance"
-        - "id"
-        - "name"
-        - "totalTimeInSeconds"
+      - "distance"
+      - "id"
+      - "name"
+      - "totalTimeInSeconds"
       type: "object"
       properties:
         id:
@@ -518,9 +535,9 @@ components:
     GroupChat:
       title: "GroupChat"
       required:
-        - "id"
-        - "messages"
-        - "participants"
+      - "id"
+      - "messages"
+      - "participants"
       type: "object"
       properties:
         id:
@@ -536,7 +553,7 @@ components:
     UserfriendList:
       title: "UserfriendList"
       required:
-        - "id"
+      - "id"
       type: "object"
       properties:
         id:
@@ -552,11 +569,11 @@ components:
     TrackedPath:
       title: "TrackedPath"
       required:
-        - "endDate"
-        - "id"
-        - "name"
-        - "startDate"
-        - "tracking"
+      - "endDate"
+      - "id"
+      - "name"
+      - "startDate"
+      - "tracking"
       type: "object"
       properties:
         id:
@@ -584,10 +601,10 @@ components:
     CurrentPosition:
       title: "CurrentPosition"
       required:
-        - "id"
-        - "name"
-        - "xCoord"
-        - "yCoord"
+      - "id"
+      - "name"
+      - "xCoord"
+      - "yCoord"
       type: "object"
       properties:
         id:
@@ -601,9 +618,9 @@ components:
     Friend:
       title: "Friend"
       required:
-        - "id"
-        - "isTracking"
-        - "name"
+      - "id"
+      - "isTracking"
+      - "name"
       type: "object"
       properties:
         id:
@@ -619,11 +636,11 @@ components:
     Race:
       title: "Race"
       required:
-        - "date"
-        - "id"
-        - "name"
-        - "shortestDistance"
-        - "shortestTime"
+      - "date"
+      - "id"
+      - "name"
+      - "shortestDistance"
+      - "shortestTime"
       type: "object"
       properties:
         id:
@@ -663,7 +680,7 @@ components:
     UserTrackedPaths:
       title: "UserTrackedPaths"
       required:
-        - "id"
+      - "id"
       type: "object"
       properties:
         id:
